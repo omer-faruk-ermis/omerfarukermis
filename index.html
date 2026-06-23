@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilek & Ömer - Düğün Davetiyesi</title>
+    <meta name="description" content="Dilek ve Ömer'in mutlu günlerine davetlisiniz. Dijital Düğün Davetiyesi.">
+    <!-- Google Fonts: Cinzel for headings, Montserrat for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.4">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180x180.png">
+</head>
+
+<body>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="tr">TR</button>
+        <button class="lang-btn" data-lang="sv">SV</button>
+        <button class="lang-btn" data-lang="da">DA</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="ku">KU</button>
+    </div>
+
+
+    <!-- Müzik Oynatıcı -->
+    <audio id="bg-music" loop>
+        <!-- Aşk Müziği - Keys of Moon: White Petals -->
+        <source src="https://www.chosic.com/wp-content/uploads/2020/06/Keys-of-Moon-White-Petals.mp3" type="audio/mpeg">
+        Tarayıcınız ses öğesini desteklemiyor.
+    </audio>
+
+    <!-- Müzik Kontrol Butonu -->
+    <button id="music-toggle" class="music-btn hidden" aria-label="Müziği oynat/durdur">
+        <svg class="music-icon play-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor"
+                d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zm-2 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+        </svg>
+        <svg class="music-icon pause-icon hidden" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+        </svg>
+    </button>
+
+    <!-- 1. Açılış Ekranı (Splash Screen / Zarf) -->
+    <div id="splash-screen" class="splash-container">
+        <div class="envelope-wrapper">
+            <div class="envelope-card">
+                <div class="envelope-header">
+                    <span class="envelope-date">21 . 07 . 2026</span>
+                </div>
+                <h1 class="envelope-names">Dilek & Ömer</h1>
+                <p class="envelope-sub" data-i18n="envelopeSub">Birlikteliğe ilk adımımızı atarken sizleri de aramızda görmekten mutluluk
+                    duyarız.</p>
+                <div class="wax-seal-container">
+                    <button id="open-invitation" class="wax-seal" aria-label="Davetiyeyi Aç">
+                        <span class="wax-seal-text" data-i18n="openBtn">AÇ</span>
+                    </button>
+                    <span class="seal-glow"></span>
+                </div>
+                <p class="click-instruction" data-i18n="clickInstruction">Lütfen davetiyeyi açmak için mühüre tıklayın</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Davetiye Ana İçerik -->
+    <main id="main-content" class="main-content hidden">
+
+        <!-- Kahraman Bölümü (Hero Section) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content-wrapper">
+                <div class="hero-content">
+                    <div class="ornament-top">
+                        <svg viewBox="0 0 100 20" width="120" height="24">
+                            <path d="M 10,10 C 30,2 70,2 90,10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="50" cy="5" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h2 class="hero-title">Dilek & Ömer</h2>
+                    <p class="hero-quote" data-i18n="heroQuote">"Bir ömrü birlikte geçirmeye, sevgiyle ve umutla yürümeye karar verdik. Bu en
+                        özel
+                        günümüzde sizleri yanımızda görmek bizlere mutluluk verecektir."</p>
+                    <div class="hero-date">
+                        <span class="day" data-i18n="tuesday">Salı</span>
+                        <span class="divider">|</span>
+                        <span class="full-date" data-i18n="july21">21 TEMMUZ 2026</span>
+                        <span class="divider">|</span>
+                        <span class="time">17:00</span>
+                    </div>
+                    <div class="ornament-bottom">
+                        <svg viewBox="0 0 100 20" width="120" height="24">
+                            <path d="M 10,10 C 30,18 70,18 90,10" fill="none" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <circle cx="50" cy="15" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <a href="#countdown" class="scroll-down" aria-label="Aşağı kaydır">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M12 5v14m0 0l-4-4m4 4l4-4" />
+                </svg>
+            </a>
+        </section>
+
+        <!-- Detaylar (Düğün & Kına) -->
+        <section id="details" class="details-section fade-in-element">
+            <div class="container">
+                <div class="details-grid">
+                    <!-- Düğün Kartı -->
+                    <div class="details-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36">
+                                <path fill="currentColor"
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </div>
+                        <h4 data-i18n="weddingCeremony">Düğün Töreni</h4>
+                        <div class="card-line"></div>
+                        <p class="time" data-i18n="time17">Saat: 17:00</p>
+                        <p class="venue">Class Düğün Salonu</p>
+                        <p class="address">Fatih Sultan Mehmet, 139186 Sk., 42770 Kulu / Konya</p>
+                    </div>
+
+                    <!-- Kına Kartı -->
+                    <div class="details-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36">
+                                <path fill="currentColor"
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z" />
+                            </svg>
+                        </div>
+                        <h4 data-i18n="hennaNight">Kına Gecesi</h4>
+                        <div class="card-line"></div>
+                        <p class="time" data-i18n="time21">Saat: 21:00</p>
+                        <p class="venue">Class Düğün Salonu</p>
+                        <p class="address">Fatih Sultan Mehmet, 139186 Sk., 42770 Kulu / Konya</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Fotoğraf Galerisi (Photo Gallery Section) -->
+        <section id="gallery" class="gallery-section fade-in-element">
+            <div class="container">
+                <h3 class="section-title" data-i18n="photoGallery">Fotoğraf Galerisi</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-index="0">
+                        <img src="assets/1.JPG" alt="Dilek & Ömer Fotoğraf 1" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="assets/11.JPG" alt="Dilek & Ömer Fotoğraf 2" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="assets/3.JPG" alt="Dilek & Ömer Fotoğraf 3" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="assets/4.JPG" alt="Dilek & Ömer Fotoğraf 4" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="assets/5.JPG" alt="Dilek & Ömer Fotoğraf 5" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="assets/10.JPG" alt="Dilek & Ömer Fotoğraf 6" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="6">
+                        <img src="assets/7.JPG" alt="Dilek & Ömer Fotoğraf 7" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="7">
+                        <img src="assets/8.JPG" alt="Dilek & Ömer Fotoğraf 8" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="8">
+                        <img src="assets/9.jpg" alt="Dilek & Ömer Fotoğraf 8" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="zoom-icon">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 2. Geri Sayım Bölümü (Countdown Section) -->
+        <section id="countdown" class="countdown-section fade-in-element">
+            <div class="container">
+                <h3 class="section-title" data-i18n="countdown">Geri Sayım</h3>
+                <p class="section-subtitle" data-i18n="countdownSub">Bu mutlu güne kavuşmamıza kalan süre</p>
+                <div class="timer-container">
+                    <div class="timer-box">
+                        <span id="days" class="timer-number">00</span>
+                        <span class="timer-label" data-i18n="days">Gün</span>
+                    </div>
+                    <div class="timer-box">
+                        <span id="hours" class="timer-number">00</span>
+                        <span class="timer-label" data-i18n="hours">Saat</span>
+                    </div>
+                    <div class="timer-box">
+                        <span id="minutes" class="timer-number">00</span>
+                        <span class="timer-label" data-i18n="minutes">Dakika</span>
+                    </div>
+                    <div class="timer-box">
+                        <span id="seconds" class="timer-number">00</span>
+                        <span class="timer-label" data-i18n="seconds">Saniye</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fotoğraf Lightbox Modal -->
+        <div id="lightbox" class="lightbox-modal">
+            <button class="lightbox-close" aria-label="Kapat">&times;</button>
+            <button class="lightbox-prev" aria-label="Önceki">&#10094;</button>
+            <button class="lightbox-next" aria-label="Sonraki">&#10095;</button>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Büyütülmüş fotoğraf">
+            </div>
+        </div>
+
+        <!-- 4. Konum Bölümü (Location Section) -->
+        <section id="location" class="location-section fade-in-element">
+            <div class="container">
+                <h3 class="section-title" data-i18n="location">Ulaşım ve Konum</h3>
+                <p class="section-subtitle" data-i18n="locationSub">Düğün ve kına alanına kolayca ulaşmanız için yol tarifi edinin</p>
+
+                <div class="location-grid">
+                    <div class="location-info">
+                        <div class="location-detail-item">
+                            <svg viewBox="0 0 24 24" width="24" height="24" class="location-icon">
+                                <path fill="currentColor"
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <div>
+                                <h5 data-i18n="addressInfo">Adres Bilgisi</h5>
+                                <p>CLASS DÜĞÜN SALONU<br>Fatih Sultan Mehmet, 139186 Sk., 42770 Kulu / Konya</p>
+                            </div>
+                        </div>
+                        <div class="location-detail-item">
+                            <svg viewBox="0 0 24 24" width="24" height="24" class="location-icon">
+                                <path fill="currentColor"
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                            </svg>
+                            <div>
+                                <h5 data-i18n="importantNote">Önemli Not</h5>
+                                <p data-i18n="parkingNote">Salonumuzda geniş otopark alanı mevcuttur. Düğün ve kına organizasyonları aynı
+                                    salonda gerçekleştirilecektir.</p>
+                            </div>
+                        </div>
+                        <div class="map-action-buttons">
+                            <a href="https://maps.google.com/?q=CLASS+DUGUN+SALONU+Fatih+Sultan+Mehmet+139186+Sk+42770+Kulu+Konya"
+                                target="_blank" class="map-btn google-btn">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor"
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                                <span data-i18n="googleMaps">Google Haritalar</span>
+                            </a>
+                            <a href="https://maps.apple.com/?q=CLASS+DUGUN+SALONU+Fatih+Sultan+Mehmet+139186+Sk+42770+Kulu+Konya"
+                                target="_blank" class="map-btn apple-btn">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor"
+                                        d="M17.9 17.4c-.8.8-1.5 1.6-2.4 1.6s-1.2-.5-2.3-.5-1.4.5-2.2.5-1.5-.7-2.3-1.6c-1.7-2.1-3-6-1.2-8.9.9-1.4 2.4-2.3 4-2.3 1.3 0 2.4.9 3.2.9s1.6-.9 3.1-.7c1.4.1 2.5.8 3.2 1.8-3 .8-2.5 4.5.1 5.5-.6 1.7-1.3 3.3-2.1 4.5zM15.9 4.2c.6-.8 1-1.9.9-3-.9.1-2.1.6-2.7 1.4-.5.6-1 1.7-.8 2.8.9.1 2-.5 2.6-1.2z" />
+                                </svg>
+                                <span data-i18n="appleMaps">Apple Haritalar</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="location-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=CLASS%20DUGUN%20SALONU%20Kulu%20Konya&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <span class="footer-names">Dilek & Ömer</span>
+                <p class="footer-thankyou" data-i18n="footerThankYou">Mutluluğumuzu paylaşan herkese teşekkür ederiz.</p>
+                <div class="footer-date" data-i18n="july21TitleCase">21 Temmuz 2026</div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JS ve Animasyon Kütüphanesi -->
+    <script src="script.js"></script>
+</body>
+
+</html>
