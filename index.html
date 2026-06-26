@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=1.4">
 
@@ -24,22 +24,12 @@
 
 <body>
 
-    <!-- Language Switcher -->
-    <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="tr">TR</button>
-        <button class="lang-btn" data-lang="sv">SV</button>
-        <button class="lang-btn" data-lang="da">DA</button>
-        <button class="lang-btn" data-lang="de">DE</button>
-        <button class="lang-btn" data-lang="ku">KU</button>
-    </div>
 
 
-    <!-- Müzik Oynatıcı -->
-    <audio id="bg-music" loop>
-        <!-- Aşk Müziği - Keys of Moon: White Petals -->
-        <source src="https://www.chosic.com/wp-content/uploads/2020/06/Keys-of-Moon-White-Petals.mp3" type="audio/mpeg">
-        Tarayıcınız ses öğesini desteklemiyor.
-    </audio>
+
+    <!-- YouTube Müzik Oynatıcı -->
+    <div id="youtube-audio" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;"></div>
+    <script src="https://www.youtube.com/iframe_api"></script>
 
     <!-- Müzik Kontrol Butonu -->
     <button id="music-toggle" class="music-btn hidden" aria-label="Müziği oynat/durdur">
